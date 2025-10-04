@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: #667eea;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #f8f9fa;
+    padding: 20px;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.card-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #e9ecf5;
+    color: #667eea;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: #666;
+}
+
+footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading animation */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Hide class for filtering */
+.hidden {
+    display: none;
+}
