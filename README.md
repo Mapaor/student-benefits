@@ -1,41 +1,33 @@
 # 🎓 Student Benefits
 
-A curated list of student benefits and discounts via .edu email
+A curated list of student benefits and discounts via .edu email. 
 
-![Student Benefits Screenshot](https://github.com/user-attachments/assets/a45d2779-a743-401a-91d9-3f39e90f05c8)
+## Benefits as a website
+Access it here: [studentbenefits.qzz.io](https://studentbenefits.qzz.io).
 
-## Features
+![Student Benefits Screenshot](preview.jpg)
 
-- 📱 Responsive card-based design
-- 🏷️ Filter benefits by category tags
-- 🎨 Modern, clean UI with gradient background
-- ⚡ Fast, client-side filtering
-- 📦 Easy to add new benefits
+## Benefits as a list
 
-## Usage
+<details>
+<summary>List of Student Benefits</summary>
 
-Simply open `index.html` in your web browser or host the files on any web server.
-
-### Local Development
-
-You can run a local server using Python:
-
-```bash
-python3 -m http.server 8080
-```
-
-Then visit `http://localhost:8080/index.html` in your browser.
-
-## Structure
-
-- `benefits.json` - JSON file containing all student benefits data
-- `index.html` - Main HTML page
-- `styles.css` - CSS styles for the website
-- `script.js` - JavaScript for loading and filtering benefits
+- GitHub Student Developer Pack
+  - GitHub Copilot Pro
+  - JetBrains IDEs
+  - AppWrite Pro
+- Notion Education Plus
+- Figma Pro
+- AutoDesk Suite
+- Cursor Pro
+- GitHub Copilot Pro
+- Office 365
+- ...
+</details>
 
 ## Adding New Benefits
 
-To add a new benefit, edit `benefits.json` and add a new object with the following structure:
+Do you know a benefit that is missing in the list? Open a GitHub issue or simply edit `benefits.json` and make a pull request. Each benefit has the following structure:
 
 ```json
 {
@@ -46,8 +38,6 @@ To add a new benefit, edit `benefits.json` and add a new object with the followi
 }
 ```
 
-The filter buttons will automatically update based on the tags used in the JSON file.
-
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details
+MIT License. See [LICENSE](LICENSE) file for details.
