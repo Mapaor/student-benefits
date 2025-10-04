@@ -95,7 +95,7 @@ function displayBenefits(benefits) {
 //     ).join('');
     
 //     return `
-//         <a class="benefit-card" href="${escapeHtml(benefit.url)}" target="_blank" rel="noopener noreferrer">
+//         <a class="benefit-card" href="${escapeHtml(benefit.url)}" target="_blank" rel="noreferrer">
 //             <img src="${escapeHtml(benefit.imageSrc)}" 
 //                  alt="${escapeHtml(benefit.title)}" 
 //                  class="card-image"
