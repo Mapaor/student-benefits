@@ -13,12 +13,6 @@ body {
     background-size: 46px 46px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 header {
     background: rgba(217, 224, 244, 0.781);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -177,10 +171,23 @@ footer a:hover {
     text-decoration: underline;
 }
 
+.container {
+    /* max-width: 1200px; */
+    max-width: 2600px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+    padding: 0 60px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
+    }
+
+    .container {
+        max-width: 100vw;
+        padding: 0 30px;
     }
 
     .benefits-grid {
