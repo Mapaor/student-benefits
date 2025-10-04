@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+/* Screen reader only class for better accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -60,6 +73,11 @@ header h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.filter-btn:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
 .filter-btn.active {
     background: #a0b0f9;
     color: white;
@@ -87,6 +105,11 @@ header h1 {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     background: #fffbe6;
+}
+
+.benefit-card:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
 }
 
 .card-image {
@@ -170,6 +193,69 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.footer-note {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.intro-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-section {
+    background: rgba(217, 224, 244, 0.4);
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: #667eea;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item h3 {
+    color: #667eea;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .container {

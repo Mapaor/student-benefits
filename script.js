@@ -121,14 +121,21 @@ function createBenefitCard(benefit) {
     card.href = benefit.url;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
+    card.setAttribute('aria-label', `Learn more about ${benefit.title} student benefits`);
+    card.setAttribute('itemscope', '');
+    card.setAttribute('itemtype', 'https://schema.org/Offer');
+    card.setAttribute('role', 'listitem');
 
     // Image
     const img = document.createElement('img');
     img.src = benefit.imageSrc;
-    img.alt = benefit.title;
+    img.alt = `${benefit.title} - Student Discount and Benefits`;
     img.className = 'card-image';
     img.loading = 'lazy';
     img.decoding = 'async';
+    img.width = '400';
+    img.height = '200';
+    img.setAttribute('itemprop', 'image');
     img.onerror = function() {
         this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E';
     };
@@ -142,12 +149,14 @@ function createBenefitCard(benefit) {
     const title = document.createElement('h2');
     title.className = 'card-title';
     title.textContent = benefit.title;
+    title.setAttribute('itemprop', 'name');
     content.appendChild(title);
 
     // Description (can contain HTML)
     const desc = document.createElement('p');
     desc.className = 'card-description';
     desc.innerHTML = benefit.description; // <-- safe for your controlled JSON
+    desc.setAttribute('itemprop', 'description');
     content.appendChild(desc);
 
     // Campus enrollment warning

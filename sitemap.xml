@@ -4,11 +4,12 @@
   <url>
     <loc>https://studentbenefits.qzz.io/</loc>
     <lastmod>2025-10-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://studentbenefits.qzz.io/assets/og-banner.jpg</image:loc>
-      <image:title>Student Benefits Banner</image:title>
+      <image:title>Student Benefits - Discover Student Discounts and Benefits</image:title>
+      <image:caption>Curated list of student benefits available with .edu email</image:caption>
     </image:image>
   </url>
 </urlset>
