@@ -211,3 +211,15 @@ footer a:hover {
 .hidden {
     display: none;
 }
+
+/* Links do not turn purple when visited */
+ a:visited {
+    /* color: blue; */
+    /* color: #0000EE */
+    color: #516eed;
+}
+
+a:link {
+    /* color: blue; */
+    color: #516eed;
+}
