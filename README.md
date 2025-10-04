@@ -40,6 +40,8 @@ Do you know a benefit that is missing in the list? Open a GitHub issue or simply
 
 The `description` property is the only one allowed to contain HTML elements (like `<br>`, `<a href='https://example.com'>example.com</a>`, `<strong>important</strong>` or similar).
 
+An additional boolean key `campusRequired` can be set to `false` for indicating that enrollment can't be done directly by the student (it needs to be done either by a professor or by the whole university or campus).
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) file for details.
