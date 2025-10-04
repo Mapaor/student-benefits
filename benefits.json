@@ -1,231 +1,231 @@
 [
   {
     "title": "GitHub Student Developer Pack",
-    "description": "Accés a GitHub Pro, GitHub Copilot i més de 100 eines premium per a desenvolupadors, inclosos crèdits al núvol, dominis gratuïts i programari professional.",
+    "description": "Access to GitHub Pro, GitHub Copilot, and over 100 premium developer tools, including cloud credits, free domains, and professional software.",
     "imageSrc": "https://education.github.com/assets/pack/opengraph-image-353bc5f30b356a74d47fbb47ee72ae498e80ed437c4c31ec0da09f42251147df.png",
     "tags": ["GitHub Pack","Development", "Cloud", "Tools"],
     "url": "https://education.github.com/pack"
   },
   {
     "title": "Notion Education Plus",
-    "description": "Versió Pro de Notion gratis per a estudiants. Inclou arxius il·limitats i convidats sense límit per col·laborar en grups i projectes.",
+    "description": "Free Notion Pro version for students. Includes unlimited files and unlimited guests for group and project collaboration.",
     "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
     "tags": ["Productivity", "Collaboration", "Notes"],
     "url": "https://www.notion.so/githubstudentpack"
   },
   {
     "title": "JetBrains Student License",
-    "description": "Accés gratuït a tots els IDEs de JetBrains com IntelliJ IDEA, PyCharm, WebStorm i GoLand. Eines professionals per a programadors.",
+    "description": "Free access to all JetBrains IDEs like IntelliJ IDEA, PyCharm, WebStorm, and GoLand. Professional tools for programmers.",
     "imageSrc": "https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png",
     "tags": ["Development", "IDE", "Tools"],
     "url": "https://www.jetbrains.com/community/education/#students"
   },
   {
     "title": "Appwrite Cloud",
-    "description": "150GB d’emmagatzematge gratuït, CDN global i serveis per a desenvolupadors: bases de dades, APIs i funcions serverless.",
+    "description": "150GB of free storage, global CDN, and developer services: databases, APIs, and serverless functions.",
     "imageSrc": "https://x5h8w2v3.delivery.rocketcdn.me/wp-content/uploads/2025/03/Logo-Appwrite.png",
     "tags": ["Cloud", "Development", "Storage"],
     "url": "https://appwrite.io/github-students"
   },
   {
     "title": "Deepnote",
-    "description": "Notebooks online per treballar amb Python i compartir-los fàcilment sense instal·lacions locals.",
+    "description": "Online notebooks to work with Python and share easily without local installations.",
     "imageSrc": "https://ik.imagekit.io/growni/v0/b/leafonlineplatform.appspot.com/o/view%2F3ab59e57-d2f6-4c48-93dc-20b2d714f542.png?alt=media&token=72416987-f526-4a17-8327-17afac3f2b8e",
     "tags": ["Data Science", "Python", "Collaboration"],
     "url": "https://deepnote.com/education"
   },
   {
     "title": "Camber",
-    "description": "Simulacions científiques avançades amb IA. Resol equacions diferencials i genera gràfics amb matplotlib automàticament.",
+    "description": "Advanced scientific simulations with AI. Solve differential equations and generate matplotlib graphs automatically.",
     "imageSrc": "https://cdn.theorg.com/87182452-598e-431a-a6f3-77b7fb6e1a8c_thumb.jpg",
     "tags": ["Science", "Simulation", "AI"],
     "url": "https://camber.dev/students"
   },
   {
     "title": "Namecheap Domains",
-    "description": "Un any de domini .me gratis per a estudiants. Ideal per a porfolis i projectes personals amb GitHub Pages o Vercel.",
+    "description": "One year of free .me domain for students. Ideal for portfolios and personal projects with GitHub Pages or Vercel.",
     "imageSrc": "https://ninjateam.org/wp-content/uploads/2020/07/Namecheap-Logo.png",
     "tags": ["Domains", "Web", "Hosting"],
     "url": "https://nc.me/"
   },
   {
     "title": "Educative Courses",
-    "description": "6 mesos d’accés gratuït a cursos professionals en programació, sistemes i desenvolupament web.",
+    "description": "6 months of free access to professional courses in programming, systems, and web development.",
     "imageSrc": "https://i.pinimg.com/736x/b6/ae/6c/b6ae6cdd8887a7a534dc3c30b58338ea.jpg",
     "tags": ["Courses", "Learning", "Programming"],
     "url": "https://www.educative.io/github-students"
   },
   {
     "title": "Frontend Masters",
-    "description": "6 mesos gratuïts de cursos exclusius en desenvolupament web: React, Vue, Node.js, CSS avançat i més.",
+    "description": "6 months free access to exclusive web development courses: React, Vue, Node.js, advanced CSS, and more.",
     "imageSrc": "https://avatars.githubusercontent.com/u/5613852?s=280&v=4",
     "tags": ["Web Development", "Learning", "Courses"],
     "url": "https://frontendmasters.com/github-students/"
   },
   {
     "title": "AlgoExpert",
-    "description": "Accés a 20 preguntes d’entrevista tècnica sobre algoritmes i estructures de dades. Inclou explicacions i vídeos detallats.",
+    "description": "Access to 20 technical interview questions on algorithms and data structures. Includes explanations and detailed videos.",
     "imageSrc": "https://assets.algoexpert.io/static/images/ae-social-logo.png",
     "tags": ["Interview Prep", "Algorithms", "Coding"],
     "url": "https://www.algoexpert.io/github-students"
   },
   {
     "title": "Microsoft Azure",
-    "description": "Crèdits gratuïts i fins a 2 anys d’accés a màquines virtuals i serveis cloud amb el GitHub Student Pack.",
+    "description": "Free credits and up to 2 years of access to virtual machines and cloud services with the GitHub Student Pack.",
     "imageSrc": "https://azurecomcdn.azureedge.net/cvt-9ad24ef91f97e3b4d1f8f79a2b4e55de46dd8c9f3f4a989cba197808b1868b2f/images/icon/azure.svg",
     "tags": ["Cloud", "VPS", "Hosting"],
     "url": "https://azure.microsoft.com/en-us/free/students/"
   },
   {
     "title": "DigitalOcean",
-    "description": "200€ en crèdits gratuïts per gastar en 1 any. Perfecte per a desplegar VPS, aplicacions web i bases de dades.",
+    "description": "€200 in free credits to spend in 1 year. Perfect for deploying VPS, web apps, and databases.",
     "imageSrc": "https://res.cloudinary.com/digitalrealty/image/upload/f_auto,q_auto,c_scale,dpr_auto,w_auto/dlr-website%2FBanners%2FResources%20Thumbnails%2FCase%20Study%20Thumbnails%2FResource_CaseStudy_DigitalOcean_logo_thumbnail_zomoi7",
     "tags": ["Cloud", "VPS", "Hosting"],
     "url": "https://www.digitalocean.com/github-students"
   },
   {
     "title": "Autodesk Education",
-    "description": "Accés gratuït a tota la suite Autodesk durant 3 anys: AutoCAD, Maya, Fusion 360, Revit i més.",
+    "description": "Free access to the entire Autodesk suite for 3 years: AutoCAD, Maya, Fusion 360, Revit, and more.",
     "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6EZ0t6QPGLFUh09vooPllYRjDUi65zJ8tg&s",
     "tags": ["3D", "CAD", "Design"],
     "url": "https://www.autodesk.com/education/edu-software/overview"
   },
   {
     "title": "Figma Education Plan",
-    "description": "Accés gratis al pla Professional de Figma mentre siguis estudiant. Ideal per a UI/UX i disseny col·laboratiu.",
+    "description": "Free access to Figma Professional plan while you are a student. Ideal for UI/UX and collaborative design.",
     "imageSrc": "https://cdn.sanity.io/images/599r6htc/regionalized/5094051dac77593d0f0978bdcbabaf79e5bb855c-1080x1080.png?w=540&h=540&q=75&fit=max&auto=format",
     "tags": ["Design", "UI/UX", "Collaboration"],
     "url": "https://www.figma.com/education/"
   },
   {
     "title": "Unity Student Plan",
-    "description": "Unity Pro gratis per a estudiants. Desenvolupa jocs i simulacions professionals sense cost.",
+    "description": "Unity Pro free for students. Develop professional games and simulations at no cost.",
     "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Unity_Technologies_logo.svg/2560px-Unity_Technologies_logo.svg.png",
     "tags": ["Game Dev", "3D", "Simulation"],
     "url": "https://unity.com/products/unity-student"
   },
   {
     "title": "MATLAB & Simulink",
-    "description": "Accés gratuït a la suite MATLAB i Simulink per a estudiants de la UB gràcies a la campus license.",
+    "description": "Free access to MATLAB and Simulink suite for UB students thanks to the campus license.",
     "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png",
     "tags": ["Math", "Simulation", "Engineering"],
     "url": "https://es.mathworks.com/products/matlab/student.html"
   },
   {
     "title": "Lucidchart Education",
-    "description": "Versió premium gratuïta de Lucidchart per a estudiants. Ideal per crear diagrames, fluxos i mapes conceptuals.",
+    "description": "Free premium version of Lucidchart for students. Ideal for creating diagrams, flows, and concept maps.",
     "imageSrc": "https://avatars.slack-edge.com/2022-07-26/3865608556737_8f4ae4a98b36ab6912b3_512.png",
     "tags": ["Productivity", "Diagrams", "Collaboration"],
     "url": "https://www.lucidchart.com/pages/edu-premium"
   },
   {
     "title": "Spotify Premium Student",
-    "description": "Spotify Premium al 50% de descompte: música sense anuncis, descàrregues offline i salts il·limitats.",
+    "description": "Spotify Premium at 50% discount: ad-free music, offline downloads, and unlimited skips.",
     "imageSrc": "https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png",
     "tags": ["Music", "Entertainment", "Streaming"],
     "url": "https://www.spotify.com/student/"
   },
   {
     "title": "Amazon Prime Student",
-    "description": "Subscripció Prime amb descompte: enviaments gratis, Prime Video i més. Només 24,95€/any.",
+    "description": "Discounted Prime subscription: free shipping, Prime Video, and more. Only €24.95/year.",
     "imageSrc": "https://www.logo.wine/a/logo/Amazon_Prime/Amazon_Prime-Logo.wine.svg",
     "tags": ["Shopping", "Streaming", "Delivery"],
     "url": "https://www.amazon.es/gp/help/customer/display.html?nodeId=GWMNXPTL3482JPHC"
   },
   {
     "title": "Google Gemini Student",
-    "description": "Prova gratuïta d’1 mes de Gemini Pro amb 2TB d’emmagatzematge i NotebookLM.",
+    "description": "1 month free trial of Gemini Pro with 2TB storage and NotebookLM.",
     "imageSrc": "https://www.gstatic.com/lamda/images/gemini_aurora_thumbnail_4g_e74822ff0ca4259beb718.png",
     "tags": ["AI", "Cloud", "Productivity"],
     "url": "https://gemini.google/students/"
   },
   {
     "title": "Codédex (Codédex Club)",
-    "description": "Plataforma learn-to-code per a Gen-Z amb cursos pràctics (Python, HTML, CSS, JS, React, Git). Els estudiants verificats acostumen a obtenir 6 mesos de Codédex Club gratuïts via GitHub Student Pack.",
+    "description": "Learn-to-code platform for Gen-Z with practical courses (Python, HTML, CSS, JS, React, Git). Verified students usually get 6 months of Codédex Club free via GitHub Student Pack.",
     "imageSrc": "https://avatars.githubusercontent.com/u/105237839?s=200&v=4",
     "tags": ["Learning", "Coding", "Courses"],
     "url": "https://www.codedex.io/"
   },
   {
     "title": "Scrimba",
-    "description": "Plataforma interactiva d'aprenentatge (especialitzada en frontend). Amb el GitHub Student Pack normalment es rep 1 mes d'accés Pro gratuït per explorar cursos i projectes.",
+    "description": "Interactive learning platform (specialized in frontend). With the GitHub Student Pack, you usually get 1 month of free Pro access to explore courses and projects.",
     "imageSrc": "https://swag.scrimba.com/cdn/shop/files/kiss-cut-stickers-white-4x4-default-64c27814005ad.jpg?v=1690466333&width=533",
     "tags": ["Learning", "Frontend", "Interactive"],
     "url": "https://scrimba.com/"
   },
   {
     "title": "InterviewCake",
-    "description": "Recursos i pràctica per entrevistes tècniques (algoritmes, estructures de dades). L'oferta per estudiants dona accés complet durant 1 setmana a través del GitHub Student Pack.",
+    "description": "Resources and practice for technical interviews (algorithms, data structures). The student offer gives full access for 1 week via GitHub Student Pack.",
     "imageSrc": "https://cdn.prod.website-files.com/66bc0319fce51f7e5568a809/66cccfa71415c8fe1322665f_63da686f8720100e177b4f40_Interview%2520Cake%2520main.webp",
     "tags": ["Interview Prep", "Algorithms", "Coding"],
     "url": "https://www.interviewcake.com/github-students"
   },
   {
     "title": "Visme (Education)",
-    "description": "Eina tot-en-un per crear presentacions, infografies i contingut visual. Té plans especials per a estudiants i institucions educatives amb accés a plantilles i recursos multimèdia.",
+    "description": "All-in-one tool to create presentations, infographics, and visual content. Special plans for students and educational institutions with access to templates and multimedia resources.",
     "imageSrc": "https://cdn-1.webcatalog.io/catalog/visme/visme-icon-filled-256.png?v=1714776372833",
     "tags": ["Design", "Presentations", "Visual"],
     "url": "https://www.visme.co/teams/education/"
   },
   {
     "title": "Tower (Git client)",
-    "description": "Client Git d'escriptori potent per macOS i Windows. Tower Pro sol oferir-se gratuïtament a estudiants verificats (llicència 'Tower Pro' via GitHub Student Pack o programa educatiu).",
+    "description": "Powerful desktop Git client for macOS and Windows. Tower Pro is usually offered free to verified students (Tower Pro license via GitHub Student Pack or educational program).",
     "imageSrc": "https://www.git-tower.com/assets/img/tower-git-client_sharing-image.1759338554.png",
     "tags": ["Git", "Development", "Tools"],
     "url": "https://www.git-tower.com/students"
   },
   {
     "title": "Termius",
-    "description": "Client SSH amb sincronització multiplataforma. Els estudiants reben accés a les funcions Pro/Team mentre estiguin verificats com a estudiants (oferta habitual a GitHub Student Pack).",
+    "description": "SSH client with cross-platform sync. Students get access to Pro/Team features while verified as students (usual offer in GitHub Student Pack).",
     "imageSrc": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F7br7ypdbsrwz9t8s9mv7.png",
     "tags": ["SSH", "DevOps", "Tools"],
     "url": "https://termius.com/education"
   },
   {
     "title": "Mathpix Snip (Educational plan)",
-    "description": "OCR avançat per matemàtiques i documents tècnics; converteix imatges i PDFs a LaTeX/Markdown. El pla educatiu augmenta el número de 'snips' i pàgines OCR per comptes educatius (p.ex. 20 snips en alguns plans educatius).",
+    "description": "Advanced OCR for math and technical documents; converts images and PDFs to LaTeX/Markdown. The educational plan increases the number of 'snips' and OCR pages for educational accounts (e.g., 20 snips in some educational plans).",
     "imageSrc": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/0a/2a/ad0a2a57-8c63-ea49-f498-1f61bcf10d38/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/1200x630wa.png",
     "tags": ["OCR", "Math", "LaTeX"],
     "url": "https://mathpix.com/docs/snip/educational-plan"
   },
   {
     "title": "Cursor",
-    "description": "Editor de codi amb funcions d'IA. Estudiants universitaris verificats poden obtenir Cursor Pro gratuït durant 1 any (accés a models i funcions premium de l'editor).",
+    "description": "Code editor with AI features. Verified university students can get Cursor Pro free for 1 year (access to premium models and editor features).",
     "imageSrc": "https://cdn.sanity.io/images/2hv88549/production/eaf1e4e537b3dedb4fed15bf807a9f73e1da98e3-1600x1000.svg?auto=format",
     "tags": ["AI", "IDE", "Coding"],
     "url": "https://cursor.com/students"
   },
   {
     "title": "Slack for Education (descompte)",
-    "description": "Programa d'educació de Slack: les institucions/espais educatius qualificats poden sol·licitar un descompte (normalment fins a l'85%) en plans Pro o Business+. No és un cupó individual automàtic — l'aplicació l'ha de fer l'organització/espai.",
+    "description": "Slack education program: qualified institutions/educational spaces can apply for a discount (usually up to 85%) on Pro or Business+ plans. It is not an automatic individual coupon — the application must be made by the organization/space.",
     "imageSrc": "https://slack.com/favicon.ico",
     "tags": ["Collaboration", "Chat", "Productivity"],
     "url": "https://slack.com/help/articles/206646877-Apply-for-the-Slack-for-Education-discount"
   },
   {
     "title": "SOLIDWORKS (Student/xDesign)",
-    "description": "Suite CAD professional per a estudiants: SOLIDWORKS xDesign / Student Edition ofereix llicències educatives a preu molt reduït (promo habitual: ~60 USD/EUR per any per a la versió estudiant web/desktop segons oferta). Inclou cursos i certificacions en alguns paquets.",
+    "description": "Professional CAD suite for students: SOLIDWORKS xDesign / Student Edition offers educational licenses at a very reduced price (usual promo: ~60 USD/EUR per year for the student web/desktop version depending on the offer). Includes courses and certifications in some packages.",
     "imageSrc": "https://1000logos.net/wp-content/uploads/2020/08/SolidWorks-Logo.png",
     "tags": ["CAD", "3D", "Engineering"],
     "url": "https://www.3ds.com/edu/education/students/solutions/solidworks-3dx"
   },
   {
     "title": "UNiDAYS",
-    "description": "Plataforma gratuïta per a estudiants que agrupa descomptes en moda, tecnologia, subscripcions i més (registre i verificació amb correu/carnet d'estudiant).",
+    "description": "Free platform for students that aggregates discounts on fashion, technology, subscriptions, and more (registration and verification with student email/ID).",
     "imageSrc": "https://cdn-1.webcatalog.io/catalog/unidays/unidays-social-preview.png?v=1758501477401",
     "tags": ["Discounts", "Shopping", "Student Deals"],
     "url": "https://www.myunidays.com/"
   },
   {
     "title": "Student Beans",
-    "description": "Plataforma de descomptes per a estudiants (similar a UNiDAYS). Ofereix codis i ofertes en software, subscripcions i comerç electrònic; sovint usada per promocions com NordVPN, Prezi, etc.",
+    "description": "Student discount platform (similar to UNiDAYS). Offers codes and deals on software, subscriptions, and e-commerce; often used for promotions like NordVPN, Prezi, etc.",
     "imageSrc": "https://cdn-1.webcatalog.io/catalog/student-beans/student-beans-social-preview.png?v=1757294455450",
     "tags": ["Discounts", "Deals", "Student Offers"],
     "url": "https://www.studentbeans.com/"
   },
   {
     "title": "Prezi (Edu Plus / Edu Pro)",
-    "description": "Prezi ofereix plans EDU amb preus reduïts per estudiants i docents: EDU Plus usualment a ~€4/mes (facturat anualment) i EDU Pro amb més funcionalitats a preu educatiu; inclou Prezi AI i eines avançades de presentació.",
+    "description": "Prezi offers EDU plans at reduced prices for students and teachers: EDU Plus usually at ~€4/month (billed annually) and EDU Pro with more features at educational price; includes Prezi AI and advanced presentation tools.",
     "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Prezi_logo_transparent_2012.svg/2048px-Prezi_logo_transparent_2012.svg.png",
     "tags": ["Presentations", "AI", "Education"],
     "url": "https://prezi.com/pricing/edu/"
