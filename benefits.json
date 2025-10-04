@@ -3,60 +3,70 @@
     "title": "GitHub Student Developer Pack",
     "description": "Get access to the best developer tools for free. Includes GitHub Pro, Azure credits, Heroku credits, and many more premium tools and services.",
     "imageSrc": "https://education.github.com/assets/pack/icon-github-education-2b2fa8ded4e6e67d1d80a42b7bff91f2f58e97e2c9e88f48a50c9b8ac48ab45a.png",
-    "tags": ["Development", "Cloud", "Tools"]
+    "tags": ["Development", "Cloud", "Tools"],
+    "url": "https://education.github.com/pack"
   },
   {
     "title": "JetBrains Student License",
     "description": "Free access to all JetBrains IDEs including IntelliJ IDEA, PyCharm, WebStorm, and more. Perfect for professional software development.",
     "imageSrc": "https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png",
-    "tags": ["Development", "IDE", "Tools"]
+    "tags": ["Development", "IDE", "Tools"],
+    "url": "https://www.jetbrains.com/community/education/#students"
   },
   {
     "title": "Microsoft Office 365",
     "description": "Free Office 365 for students including Word, Excel, PowerPoint, OneNote, and 1TB of OneDrive cloud storage.",
     "imageSrc": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b",
-    "tags": ["Productivity", "Cloud", "Office"]
+    "tags": ["Productivity", "Cloud", "Office"],
+    "url": "https://www.microsoft.com/en-us/education/products/office"
   },
   {
     "title": "Amazon Prime Student",
     "description": "Get 6 months of Prime Student for free, then 50% off Prime. Enjoy fast, free delivery, exclusive deals, and Prime Video streaming.",
     "imageSrc": "https://m.media-amazon.com/images/G/01/US-hq/2022/img/Prime/XCM_Manual_1388352_5122258_379x304_1X_en_US._SY304_CB623906675_.jpg",
-    "tags": ["Shopping", "Streaming", "Delivery"]
+    "tags": ["Shopping", "Streaming", "Delivery"],
+    "url": "https://www.amazon.com/amazonprime?tag=prime_student"
   },
   {
     "title": "Spotify Premium Student",
     "description": "Get Spotify Premium at half price. Enjoy ad-free music, offline listening, and unlimited skips.",
     "imageSrc": "https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png",
-    "tags": ["Music", "Entertainment", "Streaming"]
+    "tags": ["Music", "Entertainment", "Streaming"],
+    "url": "https://www.spotify.com/student/"
   },
   {
     "title": "Adobe Creative Cloud",
     "description": "Save over 60% on Creative Cloud All Apps. Access Photoshop, Illustrator, Premiere Pro, and 20+ creative apps.",
     "imageSrc": "https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg",
-    "tags": ["Design", "Creative", "Software"]
+    "tags": ["Design", "Creative", "Software"],
+    "url": "https://www.adobe.com/creativecloud/buy/students.html"
   },
   {
     "title": "AutoDesk Student License",
     "description": "Free 1-year access to professional 3D design software including AutoCAD, Maya, 3ds Max, and more.",
     "imageSrc": "https://damassets.autodesk.net/content/dam/autodesk/www/Company/autodesk-logo-primary-rgb-black-1536x422.png",
-    "tags": ["Design", "3D", "CAD"]
+    "tags": ["Design", "3D", "CAD"],
+    "url": "https://www.autodesk.com/education/free-software/overview"
   },
   {
     "title": "Apple Music Student",
     "description": "Get Apple Music at a discounted rate. Includes access to over 100 million songs ad-free and Apple TV+ for free.",
     "imageSrc": "https://www.apple.com/newsroom/images/product/apple-music/Apple-Music-note-icon.jpg.og.jpg",
-    "tags": ["Music", "Entertainment", "Streaming"]
+    "tags": ["Music", "Entertainment", "Streaming"],
+    "url": "https://www.apple.com/apple-music/"
   },
   {
     "title": "YouTube Premium Student",
     "description": "Enjoy ad-free videos, background play, and YouTube Music Premium at a student discount.",
     "imageSrc": "https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg",
-    "tags": ["Video", "Entertainment", "Streaming"]
+    "tags": ["Video", "Entertainment", "Streaming"],
+    "url": "https://www.youtube.com/premium/student"
   },
   {
     "title": "Notion Education Plan",
     "description": "Free Notion Plus for students and educators. Unlimited file uploads, version history, and collaboration features.",
     "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
-    "tags": ["Productivity", "Notes", "Collaboration"]
+    "tags": ["Productivity", "Notes", "Collaboration"],
+    "url": "https://www.notion.so/education"
   }
 ]

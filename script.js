@@ -86,7 +86,7 @@ function createBenefitCard(benefit) {
     ).join('');
     
     return `
-        <div class="benefit-card">
+        <a class="benefit-card" href="${escapeHtml(benefit.url)}" target="_blank" rel="noopener noreferrer">
             <img src="${escapeHtml(benefit.imageSrc)}" 
                  alt="${escapeHtml(benefit.title)}" 
                  class="card-image"
@@ -98,7 +98,7 @@ function createBenefitCard(benefit) {
                     ${tags}
                 </div>
             </div>
-        </div>
+        </a>
     `;
 }
 
