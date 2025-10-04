@@ -70,37 +70,91 @@ function handleFilterClick(event) {
 // Display benefits as cards
 function displayBenefits(benefits) {
     const container = document.getElementById('benefits-container');
+    container.innerHTML = ''; // clear old cards
     
     if (benefits.length === 0) {
         container.innerHTML = '<p class="loading">No benefits found for this filter.</p>';
         return;
     }
     
-    container.innerHTML = benefits.map(benefit => createBenefitCard(benefit)).join('');
+    // container.innerHTML = benefits.map(benefit => createBenefitCard(benefit)).join('');
+    benefits.forEach(benefit => {
+        container.appendChild(createBenefitCard(benefit));
+    });
 }
 
-// Create HTML for a single benefit card
-function createBenefitCard(benefit) {
-    const tags = benefit.tags.map(tag => 
-        `<span class="tag">${escapeHtml(tag)}</span>`
-    ).join('');
+// // Create HTML string for a single benefit card
+// function createBenefitCard(benefit) {
+//     const tags = benefit.tags.map(tag => 
+//         `<span class="tag">${escapeHtml(tag)}</span>`
+//     ).join('');
     
-    return `
-        <a class="benefit-card" href="${escapeHtml(benefit.url)}" target="_blank" rel="noopener noreferrer">
-            <img src="${escapeHtml(benefit.imageSrc)}" 
-                 alt="${escapeHtml(benefit.title)}" 
-                 class="card-image"
-                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E'">
-            <div class="card-content">
-                <h2 class="card-title">${escapeHtml(benefit.title)}</h2>
-                <p class="card-description">${escapeHtml(benefit.description)}</p>
-                <div class="card-tags">
-                    ${tags}
-                </div>
-            </div>
-        </a>
-    `;
+//     return `
+//         <a class="benefit-card" href="${escapeHtml(benefit.url)}" target="_blank" rel="noopener noreferrer">
+//             <img src="${escapeHtml(benefit.imageSrc)}" 
+//                  alt="${escapeHtml(benefit.title)}" 
+//                  class="card-image"
+//                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+//             <div class="card-content">
+//                 <h2 class="card-title">${escapeHtml(benefit.title)}</h2>
+//                 <p class="card-description">${benefit.description}</p>
+//                 <div class="card-tags">
+//                     ${tags}
+//                 </div>
+//             </div>
+//         </a>
+//     `;
+// }
+
+// Create DOM element for each benefit
+function createBenefitCard(benefit) {
+    const card = document.createElement('a');
+    card.className = 'benefit-card';
+    card.href = benefit.url;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+
+    // Image
+    const img = document.createElement('img');
+    img.src = benefit.imageSrc;
+    img.alt = benefit.title;
+    img.className = 'card-image';
+    img.onerror = function() {
+        this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E';
+    };
+    card.appendChild(img);
+
+    // Content container
+    const content = document.createElement('div');
+    content.className = 'card-content';
+
+    // Title
+    const title = document.createElement('h2');
+    title.className = 'card-title';
+    title.textContent = benefit.title;
+    content.appendChild(title);
+
+    // Description (can contain HTML)
+    const desc = document.createElement('p');
+    desc.className = 'card-description';
+    desc.innerHTML = benefit.description; // <-- safe for your controlled JSON
+    content.appendChild(desc);
+
+    // Tags
+    const tagsContainer = document.createElement('div');
+    tagsContainer.className = 'card-tags';
+    benefit.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = tag;
+        tagsContainer.appendChild(span);
+    });
+    content.appendChild(tagsContainer);
+
+    card.appendChild(content);
+    return card;
 }
+
 
 // Escape HTML to prevent XSS
 function escapeHtml(text) {

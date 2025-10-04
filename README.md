@@ -38,6 +38,8 @@ Do you know a benefit that is missing in the list? Open a GitHub issue or simply
 }
 ```
 
+The `description` property is the only one allowed to contain HTML elements (like `<br>`, `<a href="https://example.com>example.com</a>`, `<strong>important</strong>` or similar).
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) file for details.
