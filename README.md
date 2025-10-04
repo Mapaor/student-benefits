@@ -5,13 +5,13 @@ A curated list of student benefits and discounts via .edu email.
 ## Benefits as a website
 Access it here: [studentbenefits.qzz.io](https://studentbenefits.qzz.io).
 
-![Student Benefits Screenshot](preview.jpg)
+![Student Benefits Screenshot](assets/preview.jpg)
 
 ## Goal of this project
 
 The goal is to fully feature all the interesting or appealing student benefits there are on the internet. Not only the ones from the GitHub Student Pack, but any education-related benefit provided by a company or organization.
 
-![Student Benefits Zoom Out Screenshot](screenshot-full-page.png)
+![Student Benefits Zoom Out Screenshot](assets/screenshot-full-page.png)
 
 > Screenshot of the initial list.
 
