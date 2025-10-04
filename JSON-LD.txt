@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Benefits</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Basic SEO -->
-    <meta name="description" content="Discover a curated list of student benefits and discounts available with your .edu email. Save on software, subscriptions, and more!">
-    <meta name="keywords" content="student, benefits, discounts, .edu, software, subscriptions, education, notion, figma, unity, office, plus, plan">
-    <meta name="author" content="Mapaor">
-    <link rel="canonical" href="https://studentbenefits.qzz.io/">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://studentbenefits.qzz.io/">
-    <meta property="og:title" content="Student Benefits">
-    <meta property="og:description" content="Discover a curated list of student benefits and discounts available with your .edu email. Save on software, subscriptions, and more!">
-    <meta property="og:image" content="https://studentbenefits.qzz.io/og-banner.jpg">
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://studentbenefits.qzz.io/">
-    <meta name="twitter:title" content="Student Benefits">
-    <meta name="twitter:description" content="Discover a curated list of student benefits and discounts available with your .edu email. Save on software, subscriptions, and more!">
-    <meta name="twitter:image" content="https://studentbenefits.qzz.io/og-banner.jpg">
-    
-    <!-- JSON-LD (for better SEO and bots searching content) -->
-     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -362,33 +333,3 @@
     }
   ]
 }
-</script>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>🎓 Student Benefits</h1>
-            <p class="subtitle">A curated list of student benefits and discounts via .edu email</p>
-        </div>
-    </header>
-
-    <main>
-        <div class="container">
-            <div class="filters">
-                <button class="filter-btn active" data-tag="all">All</button>
-            </div>
-            <div id="benefits-container" class="benefits-grid">
-                <!-- Cards will be dynamically inserted here -->
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Have you discovered an appealing benefit? Add it via <a href="https://github.com/Mapaor/student-benefits" target="_blank">GitHub</a>.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
