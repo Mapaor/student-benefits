@@ -16,6 +16,9 @@ async function loadBenefits() {
             benefit.tags.forEach(tag => allTags.add(tag));
         });
         
+        // Generate and inject JSON-LD
+        generateJsonLD(allBenefits);
+        
         // Initialize filters
         createFilterButtons();
         
@@ -181,6 +184,70 @@ function displayError() {
     const container = document.getElementById('benefits-container');
     container.innerHTML = '<p class="loading">Failed to load benefits. Please try again later.</p>';
 }
+
+
+// Fetch benefits data
+async function loadBenefits() {
+    try {
+        const response = await fetch('benefits.json');
+        if (!response.ok) {
+            throw new Error('Failed to load benefits data');
+        }
+        allBenefits = await response.json();
+        
+        // Extract all unique tags
+        allBenefits.forEach(benefit => {
+            benefit.tags.forEach(tag => allTags.add(tag));
+        });
+        
+        // Generate and inject JSON-LD
+        generateJsonLD(allBenefits);
+        
+        // Initialize filters
+        createFilterButtons();
+        
+        // Display all benefits
+        displayBenefits(allBenefits);
+    } catch (error) {
+        console.error('Error loading benefits:', error);
+        displayError();
+    }
+}
+
+// Generate JSON-LD structured data from benefits
+function generateJsonLD(benefits) {
+    const baseUrl = 'https://studentbenefits.qzz.io';
+    
+    const itemListElements = benefits
+        .filter(benefit => !benefit.hide) // Exclude hidden items
+        .map((benefit, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "Thing",
+                "name": benefit.title,
+                "description": benefit.description.replace(/<[^>]*>/g, ''), // Strip HTML tags
+                "url": benefit.url,
+                "image": `${baseUrl}${benefit.imageSrc}`,
+                "keywords": benefit.tags.join(', ')
+            }
+        }));
+    
+    const jsonLD = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Student Benefits",
+        "description": "A curated list of student benefits and discounts available with your .edu email",
+        "itemListElement": itemListElements
+    };
+    
+    // Create script tag and inject into head
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(jsonLD, null, 2);
+    document.head.appendChild(script);
+}
+
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
