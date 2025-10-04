@@ -260,7 +260,8 @@
     "imageSrc": "https://yt3.googleusercontent.com/yuxLf3_zUv4L3U8YQoIH84DtgxtQdP5laOdantgogk6P7tKiNzFDA-JGYRk625usCHhpc5SlaDA=s900-c-k-c0x00ffffff-no-rj",
     "tags": ["Notes", "AI"],
     "url": "https://www.grammarly.com/edu",
-    "requiresCampus": true
+    "requiresCampus": true,
+    "hide": true
   },
   {
     "title": "Canva",

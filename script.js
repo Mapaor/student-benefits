@@ -77,9 +77,11 @@ function displayBenefits(benefits) {
         return;
     }
     
-    // container.innerHTML = benefits.map(benefit => createBenefitCard(benefit)).join('');
     benefits.forEach(benefit => {
-        container.appendChild(createBenefitCard(benefit));
+        const card = createBenefitCard(benefit);
+        if (card) {
+            container.appendChild(card);
+        }
     });
 }
 
@@ -108,6 +110,9 @@ function displayBenefits(benefits) {
 
 // Create DOM element for each benefit
 function createBenefitCard(benefit) {
+    if (benefit.hide === true) {
+        return null;
+    }
     const card = document.createElement('a');
     card.className = 'benefit-card';
     card.href = benefit.url;
@@ -139,6 +144,14 @@ function createBenefitCard(benefit) {
     desc.className = 'card-description';
     desc.innerHTML = benefit.description; // <-- safe for your controlled JSON
     content.appendChild(desc);
+
+    // Campus enrollment warning
+    if (benefit.requiresCampus) {
+        const campusWarning = document.createElement('div');
+        campusWarning.className = 'campus-warning';
+        campusWarning.textContent = 'Full campus enrollment required';
+        content.appendChild(campusWarning);
+    }
 
     // Tags
     const tagsContainer = document.createElement('div');
