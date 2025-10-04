@@ -7,6 +7,14 @@ Access it here: [studentbenefits.qzz.io](https://studentbenefits.qzz.io).
 
 ![Student Benefits Screenshot](preview.jpg)
 
+## Goal of this project
+
+The goal is to fully feature all the interesting or appealing student benefits there are on the internet. Not only the ones from the GitHub Student Pack, but any education-related benefit provided by a company or organization.
+
+![Student Benefits Zoom Out Screenshot](screenshot-full-page.png)
+
+> Screenshot of the initial list.
+
 ## Benefits as a list
 
 <details>
@@ -22,7 +30,7 @@ Access it here: [studentbenefits.qzz.io](https://studentbenefits.qzz.io).
 - Cursor Pro
 - GitHub Copilot Pro
 - Office 365
-- ...
+- ... (pending)
 </details>
 
 ## Adding New Benefits
