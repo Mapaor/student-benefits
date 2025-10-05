@@ -52,6 +52,8 @@ Do you know a benefit that is missing in the list? Open a GitHub issue or simply
 
 The `description` property is the only one allowed to contain HTML elements (like `<br>`, `<a href='https://example.com'>example.com</a>`, `<strong>important</strong>` or similar).
 
+The `imageSrc` can be an external link, but for speed performance it's better if it is a local relative path. You can download the logo or image locally and use [optimize-image.py](/assets/optimization-script/) to convert it to a 350px wide WEBP image (optimized version). Then put the optimized image in the benefits folder.
+
 An additional boolean key `campusRequired` can be set to `false` for indicating that enrollment can't be done directly by the student (it needs to be done either by a professor or by the whole university or campus).
 
 ## About this site code
