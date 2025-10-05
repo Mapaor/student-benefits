@@ -9,23 +9,10 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="benefits.json" as="fetch" crossorigin="anonymous">
     <link rel="preload" href="styles.css" as="style">
-    <!-- Preload LCP image (first benefit image) -->
-    <link rel="preload" href="/assets/benefits/gh-pack.webp" as="image" fetchpriority="high">
     
     <!-- Critical CSS inline for faster initial render -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            padding: 0;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -39,10 +26,25 @@
             padding: 2rem 0;
             margin-bottom: 2rem;
         }
+        header h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+        }
         .container { 
             max-width: 2600px;
             margin: 0 auto;
             padding: 0 60px;
+        }
+        .loading { 
+            text-align: center;
+            padding: 3rem;
+            color: #333;
+            font-size: 1.2rem;
         }
         .filters {
             display: flex;
@@ -50,7 +52,6 @@
             flex-wrap: wrap;
             margin-bottom: 2rem;
             justify-content: center;
-            min-height: 48px;
         }
         .filter-btn {
             padding: 10px 20px;
@@ -72,56 +73,6 @@
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
             padding: 1rem 0;
-            /* Reserve space to prevent CLS */
-            min-height: 400px;
-            contain: layout;
-        }
-        /* Skeleton loader */
-        .skeleton-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-        }
-        .skeleton-image {
-            width: 100%;
-            height: 200px;
-            min-height: 200px;
-            flex-shrink: 0;
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-        }
-        .skeleton-content {
-            padding: 1.5rem;
-            flex: 1;
-            min-height: 200px;
-        }
-        .skeleton-title {
-            height: 24px;
-            background: #f0f0f0;
-            border-radius: 4px;
-            margin-bottom: 0.75rem;
-            width: 70%;
-        }
-        .skeleton-text {
-            height: 16px;
-            background: #f0f0f0;
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-        }
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-        .loading { 
-            text-align: center;
-            padding: 3rem;
-            color: #333;
-            font-size: 1.2rem;
         }
     </style>
     
@@ -133,59 +84,19 @@
     <meta name="description" content="Discover a curated list of student benefits and discounts available with your .edu email. Save on software, subscriptions, and more!">
     <meta name="keywords" content="student, benefits, discounts, .edu, software, subscriptions, education, notion, figma, unity, office, plus, plan">
     <meta name="author" content="Mapaor">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="theme-color" content="#667eea">
     <link rel="canonical" href="https://studentbenefits.qzz.io/">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://studentbenefits.qzz.io/">
     <meta property="og:title" content="Student Benefits">
     <meta property="og:description" content="Discover a curated list of student benefits and discounts available with your .edu email. Save on software, subscriptions, and more!">
     <meta property="og:image" content="https://studentbenefits.qzz.io/assets/og-banner.jpg">
-    <meta property="og:site_name" content="Student Benefits">
-    <meta property="og:locale" content="en_US">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://studentbenefits.qzz.io/">
     <meta name="twitter:title" content="Student Benefits">
     <meta name="twitter:description" content="Discover a curated list of student benefits and discounts available with your .edu email. Save on software, subscriptions, and more!">
     <meta name="twitter:image" content="https://studentbenefits.qzz.io/assets/og-banner.jpg">
-    
-    <!-- Structured Data - Website -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Student Benefits",
-      "url": "https://studentbenefits.qzz.io/",
-      "description": "Discover a curated list of student benefits and discounts available with your .edu email",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://studentbenefits.qzz.io/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    
-    <!-- Structured Data - Breadcrumb -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://studentbenefits.qzz.io/"
-      }]
-    }
-    </script>
     
     <!-- JSON-LD (for better SEO and bots searching content) will get generated (via script.js) here -->
 
@@ -200,121 +111,21 @@
 
     <main>
         <div class="container">
-            <!-- <section class="intro-section">
-                <h2 class="visually-hidden">About Student Benefits</h2>
-                <p class="intro-text">
-                    As a student, you have access to incredible deals on software, cloud services, learning platforms, and more. Most benefits require only a valid <strong>.edu email address</strong> to unlock premium features.
-                </p>
-            </section> -->
-            
-            <h2 class="visually-hidden">Browse Student Benefits by Category</h2>
-            <div class="filters" role="navigation" aria-label="Filter benefits by category">
+            <div class="filters">
                 <button class="filter-btn active" data-tag="all">All</button>
             </div>
-            <div id="benefits-container" class="benefits-grid" role="list">
-                <!-- Skeleton loaders to prevent CLS -->
-                <div class="skeleton-card" aria-hidden="true">
-                    <div class="skeleton-image"></div>
-                    <div class="skeleton-content">
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skeleton-card" aria-hidden="true">
-                    <div class="skeleton-image"></div>
-                    <div class="skeleton-content">
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skeleton-card" aria-hidden="true">
-                    <div class="skeleton-image"></div>
-                    <div class="skeleton-content">
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text" style="width: 80%;"></div>
-                    </div>
-                </div>
+            <div id="benefits-container" class="benefits-grid">
+                <p class="loading">Loading benefits...</p>
             </div>
         </div>
     </main>
-    
-    <!-- <section class="faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">How do I access student benefits?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Most student benefits require a valid .edu email address or verification through your university. Some services like the GitHub Student Developer Pack offer comprehensive verification systems that ensure you're an active student.</p>
-                    </div>
-                </div>
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">What is the GitHub Student Developer Pack?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">The GitHub Student Developer Pack provides free access to over 100 premium developer tools including GitHub Pro, GitHub Copilot, cloud credits, free domains, and professional software. It's one of the most valuable resources for student developers.</p>
-                    </div>
-                </div>
-                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <h3 itemprop="name">Do these benefits work internationally?</h3>
-                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Yes! Most benefits listed here are available to students worldwide. However, some services may have regional restrictions or require specific types of educational verification.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <footer>
         <div class="container">
-            <p>Have you discovered an appealing benefit? Add it via <a href="https://github.com/Mapaor/student-benefits" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-            <!-- <p class="footer-note">Last updated: October 2025</p> -->
+            <p>Have you discovered an appealing benefit? Add it via <a href="https://github.com/Mapaor/student-benefits" target="_blank" rel="noreferrer">GitHub</a>.</p>
         </div>
     </footer>
-    
-    <!-- FAQ Schema -->
-    <!-- <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How do I access student benefits?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most student benefits require a valid .edu email address or verification through your university. Some services like the GitHub Student Developer Pack offer comprehensive verification systems that ensure you're an active student."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What is the GitHub Student Developer Pack?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The GitHub Student Developer Pack provides free access to over 100 premium developer tools including GitHub Pro, GitHub Copilot, cloud credits, free domains, and professional software. It's one of the most valuable resources for student developers."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Do these benefits work internationally?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! Most benefits listed here are available to students worldwide. However, some services may have regional restrictions or require specific types of educational verification."
-        }
-      }]
-    }
-    </script> -->
 
     <script src="script.js" defer></script>
-    
-    <!-- Register Service Worker for caching on GitHub Pages -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registered:', registration.scope))
-                    .catch(err => console.log('SW registration failed:', err));
-            });
-        }
-    </script>
 </body>
 </html>

@@ -80,8 +80,8 @@ function displayBenefits(benefits) {
         return;
     }
     
-    benefits.forEach((benefit, index) => {
-        const card = createBenefitCard(benefit, index);
+    benefits.forEach(benefit => {
+        const card = createBenefitCard(benefit);
         if (card) {
             container.appendChild(card);
         }
@@ -112,7 +112,7 @@ function displayBenefits(benefits) {
 // }
 
 // Create DOM element for each benefit
-function createBenefitCard(benefit, index = 0) {
+function createBenefitCard(benefit) {
     if (benefit.hide === true) {
         return null;
     }
@@ -121,94 +121,55 @@ function createBenefitCard(benefit, index = 0) {
     card.href = benefit.url;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
-    card.setAttribute('aria-label', `Learn more about ${benefit.title} student benefits`);
-    card.setAttribute('itemscope', '');
-    card.setAttribute('itemtype', 'https://schema.org/Offer');
-    card.setAttribute('role', 'listitem');
-
-    // Image container to prevent CLS
-    const imgContainer = document.createElement('div');
-    imgContainer.className = 'card-image-container';
-    imgContainer.style.cssText = 'width: 100%; height: 200px; min-height: 200px; aspect-ratio: 2/1; background: #f8f9fa;';
 
     // Image
     const img = document.createElement('img');
     img.src = benefit.imageSrc;
-    img.alt = `${benefit.title} - Student Discount and Benefits`;
+    img.alt = benefit.title;
     img.className = 'card-image';
-    img.width = 400;
-    img.height = 200;
-    img.setAttribute('itemprop', 'image');
-    img.style.aspectRatio = '2 / 1';
-    
-    // First 3 images load immediately (for LCP)
-    if (index < 3) {
-        img.loading = 'eager';
-        img.fetchPriority = 'high';
-        img.decoding = 'sync';
-    } else {
-        // Rest of images: lazy load
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.fetchPriority = 'low';
-    }
-    
+    img.loading = 'lazy';
+    img.decoding = 'async';
     img.onerror = function() {
-        this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22400%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E';
+        this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E';
     };
-    
-    imgContainer.appendChild(img);
-    card.appendChild(imgContainer);
+    card.appendChild(img);
 
-    // Content
+    // Content container
     const content = document.createElement('div');
     content.className = 'card-content';
-    content.setAttribute('itemprop', 'description');
 
     // Title
     const title = document.createElement('h2');
     title.className = 'card-title';
     title.textContent = benefit.title;
-    title.setAttribute('itemprop', 'name');
-
-    const description = document.createElement('p');
-    description.className = 'card-description';
-    description.innerHTML = benefit.description;
-
     content.appendChild(title);
-    content.appendChild(description);
+
+    // Description (can contain HTML)
+    const desc = document.createElement('p');
+    desc.className = 'card-description';
+    desc.innerHTML = benefit.description; // <-- safe for your controlled JSON
+    content.appendChild(desc);
+
+    // Campus enrollment warning
+    if (benefit.requiresCampus) {
+        const campusWarning = document.createElement('div');
+        campusWarning.className = 'campus-warning';
+        campusWarning.textContent = 'Full campus enrollment required';
+        content.appendChild(campusWarning);
+    }
 
     // Tags
-    if (benefit.tags && benefit.tags.length > 0) {
-        const tagsContainer = document.createElement('div');
-        tagsContainer.className = 'card-tags';
-        
-        benefit.tags.forEach(tag => {
-            const tagElement = document.createElement('span');
-            tagElement.className = 'tag';
-            tagElement.textContent = tag;
-            tagsContainer.appendChild(tagElement);
-        });
-        
-        content.appendChild(tagsContainer);
-    }
-
-    // Warning for campus-only benefits
-    if (benefit.requiresCampus) {
-        const warning = document.createElement('p');
-        warning.className = 'campus-warning';
-        warning.textContent = '⚠️ May require on-campus verification';
-        content.appendChild(warning);
-    }
+    const tagsContainer = document.createElement('div');
+    tagsContainer.className = 'card-tags';
+    benefit.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = tag;
+        tagsContainer.appendChild(span);
+    });
+    content.appendChild(tagsContainer);
 
     card.appendChild(content);
-
-    // Add link metadata
-    const link = document.createElement('link');
-    link.setAttribute('itemprop', 'url');
-    link.href = benefit.url;
-    card.appendChild(link);
-
     return card;
 }
 
