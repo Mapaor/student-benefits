@@ -81,3 +81,4 @@ Check as well:
 - [https://gratisparaestudiantes.vercel.app/](https://gratisparaestudiantes.vercel.app/)
 - [https://resources.tensorboy.com/resources](https://resources.tensorboy.com/resources)
 - [https://www.reddit.com/r/FASTNU/comments/1nslmxy/fast_student_id_benefits/](https://www.reddit.com/r/FASTNU/comments/1nslmxy/fast_student_id_benefits/)
+- [https://studentai.io/discounts](https://studentai.io/discounts)
