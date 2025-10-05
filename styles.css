@@ -25,6 +25,11 @@ header {
     min-height: 140px;
 }
 
+main {
+    /* Prevent main element shift by setting minimum height */
+    min-height: calc(100vh - 240px);
+}
+
 header h1 {
     font-size: 2.5rem;
     color: #667eea;
@@ -78,6 +83,8 @@ header h1 {
     padding: 1rem 0;
     /* Reserve minimum height to prevent CLS */
     min-height: 500px;
+    /* Prevent grid auto-placement shifts */
+    grid-auto-rows: minmax(400px, auto);
 }
 
 .benefit-card {
@@ -170,6 +177,8 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 3rem;
+    /* Prevent footer shift by ensuring min height above */
+    min-height: 100px;
 }
 
 footer p {
