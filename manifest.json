@@ -18,5 +18,6 @@
   "categories": ["education", "productivity", "finance"],
   "lang": "en-US",
   "dir": "ltr",
-  "scope": "/"
+  "scope": "/",
+  "prefer_related_applications": false
 }

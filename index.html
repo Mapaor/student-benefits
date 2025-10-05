@@ -9,6 +9,8 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="benefits.json" as="fetch" crossorigin="anonymous">
     <link rel="preload" href="styles.css" as="style">
+    <!-- Preload LCP image (first benefit image) -->
+    <link rel="preload" href="/assets/benefits/gh-pack.webp" as="image" fetchpriority="high">
     
     <!-- Critical CSS inline for faster initial render -->
     <style>
@@ -323,5 +325,16 @@
     </script> -->
 
     <script src="script.js" defer></script>
+    
+    <!-- Register Service Worker for caching on GitHub Pages -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered:', registration.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>

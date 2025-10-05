@@ -80,8 +80,8 @@ function displayBenefits(benefits) {
         return;
     }
     
-    benefits.forEach(benefit => {
-        const card = createBenefitCard(benefit);
+    benefits.forEach((benefit, index) => {
+        const card = createBenefitCard(benefit, index);
         if (card) {
             container.appendChild(card);
         }
@@ -112,7 +112,7 @@ function displayBenefits(benefits) {
 // }
 
 // Create DOM element for each benefit
-function createBenefitCard(benefit) {
+function createBenefitCard(benefit, index = 0) {
     if (benefit.hide === true) {
         return null;
     }
@@ -126,16 +126,26 @@ function createBenefitCard(benefit) {
     card.setAttribute('itemtype', 'https://schema.org/Offer');
     card.setAttribute('role', 'listitem');
 
-    // Image
+    // Image - First 3 images should load immediately for LCP optimization
     const img = document.createElement('img');
     img.src = benefit.imageSrc;
     img.alt = `${benefit.title} - Student Discount and Benefits`;
     img.className = 'card-image';
-    img.loading = 'lazy';
-    img.decoding = 'async';
     img.width = '400';
     img.height = '200';
     img.setAttribute('itemprop', 'image');
+    
+    // First 3 images: no lazy loading, high priority for LCP
+    if (index < 3) {
+        img.loading = 'eager';
+        img.fetchPriority = 'high';
+        img.decoding = 'sync';
+    } else {
+        // Rest of images: lazy load
+        img.loading = 'lazy';
+        img.decoding = 'async';
+    }
+    
     // Add aspect-ratio to prevent CLS
     img.style.aspectRatio = '2 / 1';
     img.onerror = function() {
