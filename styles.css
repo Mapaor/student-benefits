@@ -108,7 +108,9 @@ header h1 {
     background: #f8f9fa;
     padding: 20px;
     /* Prevent CLS by setting explicit aspect ratio */
-    aspect-ratio: 320 / 200;
+    aspect-ratio: 8 / 5;
+    /* Prevent layout shift during image load */
+    display: block;
 }
 
 .card-content {

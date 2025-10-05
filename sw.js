@@ -1,6 +1,7 @@
 // Service Worker for Student Benefits
-const CACHE_NAME = 'student-benefits-v1';
+const CACHE_NAME = 'student-benefits-v2'; // Increment version for CLS fixes
 const RUNTIME_CACHE = 'student-benefits-runtime';
+const IMAGE_CACHE = 'student-benefits-images';
 
 // Assets to cache on install
 const PRECACHE_URLS = [
@@ -23,7 +24,7 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  const currentCaches = [CACHE_NAME, RUNTIME_CACHE];
+  const currentCaches = [CACHE_NAME, RUNTIME_CACHE, IMAGE_CACHE];
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
@@ -43,7 +44,24 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Serve from cache first, update cache in background (stale-while-revalidate)
-  if (event.request.url.includes('/assets/')) {
+  if (event.request.url.includes('/assets/benefits/')) {
+    event.respondWith(
+      caches.open(IMAGE_CACHE).then((cache) => {
+        return cache.match(event.request).then((cachedResponse) => {
+          const fetchPromise = fetch(event.request).then((networkResponse) => {
+            // Only cache successful responses
+            if (networkResponse && networkResponse.status === 200) {
+              cache.put(event.request, networkResponse.clone());
+            }
+            return networkResponse;
+          }).catch(() => cachedResponse); // Fallback to cache if network fails
+          
+          // Return cached response immediately if available, otherwise wait for network
+          return cachedResponse || fetchPromise;
+        });
+      })
+    );
+  } else if (event.request.url.includes('/assets/')) {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
         if (cachedResponse) {

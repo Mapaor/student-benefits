@@ -12,6 +12,9 @@
     <link rel="dns-prefetch" href="https://studentbenefits.qzz.io">
     <link rel="preconnect" href="https://studentbenefits.qzz.io">
     
+    <!-- Preconnect to image origin for faster loading -->
+    <link rel="preconnect" href="https://studentbenefits.qzz.io" crossorigin>
+    
     <!-- Critical CSS inline for faster initial render -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -103,7 +106,8 @@
             background: #f8f9fa;
             padding: 20px;
             /* Prevent CLS by setting explicit aspect ratio */
-            aspect-ratio: 320 / 200;
+            aspect-ratio: 8 / 5;
+            display: block;
         }
     </style>
     
