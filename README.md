@@ -63,6 +63,14 @@ Then basic SEO optimizations were made, robots.txt, sitemap.xml and JSON-LD were
 
 Then SEO performance was not great, so for enabling cache headers migrated from GH Pages to Vercel, see: [a49408ce2874d49f316dd748732e365f6b003f4d](https://github.com/Mapaor/student-benefits/tree/a49408ce2874d49f316dd748732e365f6b003f4d).
 
+And finally modified some styling and script loading to improve LCP (Largest Content Paint) and CLS (Content Layout Shift) scores.
+
+<details>
+<summary>Current SEO status</summary>
+
+![SEO Status](/assets/seo-status.jpg)
+</details>
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) file for details.
