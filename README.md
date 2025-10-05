@@ -50,6 +50,13 @@ The `description` property is the only one allowed to contain HTML elements (lik
 
 An additional boolean key `campusRequired` can be set to `false` for indicating that enrollment can't be done directly by the student (it needs to be done either by a professor or by the whole university or campus).
 
+## About this site code
+The front-end was initially very simple, simple GH pages site, images fetched from the internet, etc. Check: [fba6e4a66c633b7172dffc9949e4ec2f6ccb1da4](https://github.com/Mapaor/student-benefits/tree/fba6e4a66c633b7172dffc9949e4ec2f6ccb1da4)
+
+Then basic SEO optimizations were made, robots.txt, sitemap.xml and JSON-LD were added and images were optimized and locally stored, see: [1d16bf4dc86f95500f9bedf90514e42d775270a5](https://github.com/Mapaor/student-benefits/tree/1d16bf4dc86f95500f9bedf90514e42d775270a5)
+
+Then SEO performance was not great, so for enabling cache headers migrated from GH Pages to Vercel, see: [a49408ce2874d49f316dd748732e365f6b003f4d](https://github.com/Mapaor/student-benefits/tree/a49408ce2874d49f316dd748732e365f6b003f4d)
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) file for details.
