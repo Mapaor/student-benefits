@@ -2,10 +2,12 @@
 let allBenefits = [];
 let allTags = new Set();
 
-// Fetch benefits data
+// Fetch benefits data with caching
 async function loadBenefits() {
     try {
-        const response = await fetch('benefits.json');
+        const response = await fetch('benefits.json', {
+            cache: 'force-cache'
+        });
         if (!response.ok) {
             throw new Error('Failed to load benefits data');
         }
@@ -80,12 +82,17 @@ function displayBenefits(benefits) {
         return;
     }
     
+    // Use DocumentFragment for better performance
+    const fragment = document.createDocumentFragment();
+    
     benefits.forEach(benefit => {
         const card = createBenefitCard(benefit);
         if (card) {
-            container.appendChild(card);
+            fragment.appendChild(card);
         }
     });
+    
+    container.appendChild(fragment);
 }
 
 // // Create HTML string for a single benefit card
@@ -129,6 +136,8 @@ function createBenefitCard(benefit) {
     img.className = 'card-image';
     img.loading = 'lazy';
     img.decoding = 'async';
+    img.width = 320;
+    img.height = 180;
     img.onerror = function() {
         this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E';
     };
@@ -253,6 +262,17 @@ function generateJsonLD(benefits) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // Register service worker for offline support and caching
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+                console.log('ServiceWorker registered:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('ServiceWorker registration failed:', error);
+            });
+    }
+    
     // Add event listener for "All" filter button
     const allFilterBtn = document.querySelector('[data-tag="all"]');
     if (allFilterBtn) {

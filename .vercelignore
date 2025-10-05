@@ -1,0 +1,7 @@
+.git
+.gitignore
+README.md
+scripts-for-images/
+.vscode/
+.DS_Store
+*.log
