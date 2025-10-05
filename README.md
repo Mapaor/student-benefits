@@ -24,6 +24,10 @@ The goal is to fully feature all the interesting or appealing student benefits t
   - GitHub Copilot Pro
   - JetBrains IDEs
   - AppWrite Pro
+  - Camber Cloud
+  - Namecheap .me domain
+  - Educative, Frontend Masters, Codedex, Scrimba
+  - ...
 - Notion Education Plus
 - Figma Pro
 - AutoDesk Suite
