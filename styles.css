@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Font loading optimization */
-@supports (font-display: optional) {
-    body {
-        font-display: optional;
-    }
-}
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -21,8 +14,6 @@ body {
     background-size: 46px 46px;
     /* Prevent font loading CLS */
     font-display: swap;
-    /* Use contain for better performance and CLS prevention */
-    contain: layout style paint;
 }
 
 header {
@@ -64,10 +55,8 @@ header h1 {
     cursor: pointer;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Prevent layout shifts on hover */
-    will-change: transform;
 }
 
 .filter-btn:hover {
@@ -102,17 +91,12 @@ header h1 {
     text-decoration: none;
     /* Prevent CLS by setting minimum height */
     min-height: 400px;
-    /* Use contain for better performance */
-    contain: layout style paint;
-    /* Prevent layout shifts */
-    will-change: transform;
 }
 
 .benefit-card:hover {
-    /* Use transform only for better performance and no CLS */
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    /* Avoid background color change that causes repaint */
+    background: #fffbe6;
 }
 
 .card-image {
@@ -125,11 +109,6 @@ header h1 {
     aspect-ratio: 8 / 5;
     /* Prevent layout shift during image load */
     display: block;
-    /* Reserve space and prevent CLS */
-    min-height: 200px;
-    max-height: 200px;
-    /* Prevent image reflow */
-    contain: layout;
 }
 
 .card-content {
@@ -289,15 +268,31 @@ footer a:hover {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     min-height: 400px;
-    animation: pulse 1.5s ease-in-out infinite;
+    position: relative;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
+.skeleton-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+    );
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        left: -100%;
     }
-    50% {
-        opacity: 0.7;
+    100% {
+        left: 100%;
     }
 }
 
