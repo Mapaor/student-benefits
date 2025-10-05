@@ -74,3 +74,10 @@ And finally modified some styling and script loading to improve LCP (Largest Con
 ## License
 
 MIT License. See [LICENSE](LICENSE) file for details.
+
+## Similar Porjects
+
+Check as well: 
+- [https://gratisparaestudiantes.vercel.app/](https://gratisparaestudiantes.vercel.app/)
+- [https://resources.tensorboy.com/resources](https://resources.tensorboy.com/resources)
+- [https://www.reddit.com/r/FASTNU/comments/1nslmxy/fast_student_id_benefits/](https://www.reddit.com/r/FASTNU/comments/1nslmxy/fast_student_id_benefits/)
