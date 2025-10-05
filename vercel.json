@@ -1,20 +1,7 @@
 {
   "headers": [
     {
-      "source": "/assets/benefits/(.*\\.(webp|jpg|png|svg|gif|ico))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Content-Type",
-          "value": "image/webp"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(favicon\\.ico|og-banner\\.jpg|preview\\.jpg|screenshot-full-page\\.png)",
+      "source": "/assets/benefits/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -23,7 +10,7 @@
       ]
     },
     {
-      "source": "/(styles\\.css|script\\.js)",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -32,7 +19,16 @@
       ]
     },
     {
-      "source": "/benefits\\.json",
+      "source": "/(styles.css|script.js)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/benefits.json",
       "headers": [
         {
           "key": "Cache-Control",
@@ -45,7 +41,7 @@
       ]
     },
     {
-      "source": "/",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -53,12 +49,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!assets|styles\\.css|script\\.js|benefits\\.json).*)",
-      "destination": "/index.html"
-    }
-  ],
-  "trailingSlash": false
+  ]
 }
