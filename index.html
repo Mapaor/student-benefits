@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>Student Benefits</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
@@ -15,6 +16,9 @@
     <!-- Preconnect to image origin for faster loading -->
     <link rel="preconnect" href="https://studentbenefits.qzz.io" crossorigin>
     
+    <!-- Preload system fonts to prevent FOUT/FOIT -->
+    <link rel="preload" as="font" type="font/woff2" href="data:font/woff2;base64," crossorigin>
+    
     <!-- Critical CSS inline for faster initial render -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,6 +29,7 @@
             color: #333;
             min-height: 100vh;
             background: #eeeeee;
+            contain: layout style paint;
         }
         header { 
             background: rgba(217, 224, 244, 0.781);
@@ -75,6 +80,7 @@
             font-size: 0.95rem;
             font-weight: 500;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            will-change: transform;
         }
         .filter-btn.active {
             background: #a0b0f9;
@@ -98,6 +104,8 @@
             text-decoration: none;
             /* Prevent CLS by setting minimum height */
             min-height: 400px;
+            contain: layout style paint;
+            will-change: transform;
         }
         .card-image {
             width: 100%;
@@ -108,6 +116,9 @@
             /* Prevent CLS by setting explicit aspect ratio */
             aspect-ratio: 8 / 5;
             display: block;
+            min-height: 200px;
+            max-height: 200px;
+            contain: layout;
         }
     </style>
     

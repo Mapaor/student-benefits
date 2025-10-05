@@ -1,7 +1,7 @@
 // Service Worker for Student Benefits
-const CACHE_NAME = 'student-benefits-v2'; // Increment version for CLS fixes
-const RUNTIME_CACHE = 'student-benefits-runtime';
-const IMAGE_CACHE = 'student-benefits-images';
+const CACHE_NAME = 'student-benefits-v3'; // Increment version for CLS improvements
+const RUNTIME_CACHE = 'student-benefits-runtime-v3';
+const IMAGE_CACHE = 'student-benefits-images-v3';
 
 // Assets to cache on install
 const PRECACHE_URLS = [

@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+/* Font loading optimization */
+@supports (font-display: optional) {
+    body {
+        font-display: optional;
+    }
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -14,6 +21,8 @@ body {
     background-size: 46px 46px;
     /* Prevent font loading CLS */
     font-display: swap;
+    /* Use contain for better performance and CLS prevention */
+    contain: layout style paint;
 }
 
 header {
@@ -55,8 +64,10 @@ header h1 {
     cursor: pointer;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Prevent layout shifts on hover */
+    will-change: transform;
 }
 
 .filter-btn:hover {
@@ -85,7 +96,7 @@ header h1 {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -93,12 +104,15 @@ header h1 {
     min-height: 400px;
     /* Use contain for better performance */
     contain: layout style paint;
+    /* Prevent layout shifts */
+    will-change: transform;
 }
 
 .benefit-card:hover {
+    /* Use transform only for better performance and no CLS */
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    background: #fffbe6;
+    /* Avoid background color change that causes repaint */
 }
 
 .card-image {
@@ -111,6 +125,11 @@ header h1 {
     aspect-ratio: 8 / 5;
     /* Prevent layout shift during image load */
     display: block;
+    /* Reserve space and prevent CLS */
+    min-height: 200px;
+    max-height: 200px;
+    /* Prevent image reflow */
+    contain: layout;
 }
 
 .card-content {
@@ -198,6 +217,12 @@ footer a:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    header {
+        /* Maintain consistent height on mobile */
+        min-height: 120px;
+        padding: 1.5rem 0;
+    }
+    
     header h1 {
         font-size: 2rem;
     }
@@ -210,16 +235,37 @@ footer a:hover {
     .benefits-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.5rem;
+        /* Adjust minimum height for mobile */
+        min-height: 400px;
     }
 
     .card-title {
         font-size: 1.2rem;
+    }
+    
+    .benefit-card {
+        /* Consistent minimum height on mobile */
+        min-height: 380px;
     }
 }
 
 @media (max-width: 480px) {
     .benefits-grid {
         grid-template-columns: 1fr;
+        /* Single column minimum height */
+        min-height: 400px;
+    }
+    
+    .benefit-card {
+        /* Consistent card height on small screens */
+        min-height: 400px;
+    }
+    
+    .card-image {
+        /* Ensure consistent image height */
+        min-height: 180px;
+        max-height: 180px;
+        height: 180px;
     }
 }
 
@@ -231,6 +277,28 @@ footer a:hover {
     font-size: 1.2rem;
     /* Reserve space to prevent CLS */
     min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Skeleton loader for better perceived performance */
+.skeleton-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 /* Hide class for filtering */

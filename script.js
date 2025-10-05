@@ -39,6 +39,9 @@ function createFilterButtons() {
     // Sort tags alphabetically
     const sortedTags = Array.from(allTags).sort();
     
+    // Use DocumentFragment to minimize reflows
+    const fragment = document.createDocumentFragment();
+    
     // Add tag filter buttons
     sortedTags.forEach(tag => {
         const button = document.createElement('button');
@@ -46,8 +49,11 @@ function createFilterButtons() {
         button.textContent = tag;
         button.dataset.tag = tag;
         button.addEventListener('click', handleFilterClick);
-        filtersContainer.appendChild(button);
+        fragment.appendChild(button);
     });
+    
+    // Single DOM update to prevent multiple reflows
+    filtersContainer.appendChild(fragment);
 }
 
 // Handle filter button clicks
@@ -75,14 +81,13 @@ function handleFilterClick(event) {
 // Display benefits as cards
 function displayBenefits(benefits) {
     const container = document.getElementById('benefits-container');
-    container.innerHTML = ''; // clear old cards
     
     if (benefits.length === 0) {
         container.innerHTML = '<p class="loading">No benefits found for this filter.</p>';
         return;
     }
     
-    // Use DocumentFragment for better performance
+    // Use DocumentFragment for better performance and reduced CLS
     const fragment = document.createDocumentFragment();
     
     benefits.forEach(benefit => {
@@ -92,6 +97,8 @@ function displayBenefits(benefits) {
         }
     });
     
+    // Clear and update in one operation to minimize reflows
+    container.innerHTML = '';
     container.appendChild(fragment);
 }
 
@@ -141,6 +148,10 @@ function createBenefitCard(benefit) {
     img.height = 200;
     // Add sizes attribute for responsive images
     img.sizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 320px';
+    // Add inline style for immediate dimension application
+    img.style.width = '100%';
+    img.style.height = '200px';
+    img.style.aspectRatio = '8 / 5';
     img.onerror = function() {
         this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22200%22%3E%3Crect fill=%22%23e9ecf5%22 width=%22320%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23667eea%22%3ENo Image%3C/text%3E%3C/svg%3E';
     };
