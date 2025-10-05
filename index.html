@@ -75,6 +75,8 @@
             flex-wrap: wrap;
             margin-bottom: 2rem;
             justify-content: center;
+            /* Reserve space to prevent CLS */
+            min-height: 48px;
         }
         .filter-btn {
             padding: 10px 20px;
@@ -96,6 +98,48 @@
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
             padding: 1rem 0;
+            /* Reserve space to prevent CLS */
+            min-height: 400px;
+        }
+        /* Skeleton loader for better perceived performance */
+        .skeleton-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .skeleton-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            aspect-ratio: 2 / 1;
+        }
+        .skeleton-content {
+            padding: 1.5rem;
+        }
+        .skeleton-title {
+            height: 24px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            width: 70%;
+        }
+        .skeleton-text {
+            height: 16px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
     </style>
     
@@ -186,7 +230,31 @@
                 <button class="filter-btn active" data-tag="all">All</button>
             </div>
             <div id="benefits-container" class="benefits-grid" role="list">
-                <p class="loading">Loading benefits...</p>
+                <!-- Skeleton loaders to prevent CLS -->
+                <div class="skeleton-card" aria-hidden="true">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card" aria-hidden="true">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card" aria-hidden="true">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text" style="width: 80%;"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
