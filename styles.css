@@ -138,6 +138,9 @@ header h1 {
     margin-bottom: 1rem;
     line-height: 1.6;
     flex: 1;
+    /* Prevent description from causing layout shifts */
+    min-height: 60px;
+    overflow: hidden;
 }
 
 
@@ -219,12 +222,19 @@ footer a:hover {
         max-width: 100vw;
         padding: 0 20px;
     }
+    
+    main {
+        /* Adjust main height for mobile */
+        min-height: calc(100vh - 300px);
+    }
 
     .benefits-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.5rem;
         /* Adjust minimum height for mobile */
-        min-height: 400px;
+        min-height: 600px;
+        /* Ensure consistent row heights */
+        grid-auto-rows: minmax(420px, auto);
     }
 
     .card-title {
@@ -233,7 +243,12 @@ footer a:hover {
     
     .benefit-card {
         /* Consistent minimum height on mobile */
-        min-height: 380px;
+        min-height: 420px;
+    }
+    
+    .skeleton-card {
+        /* Match benefit card height on mobile */
+        min-height: 420px;
     }
 }
 
@@ -241,12 +256,19 @@ footer a:hover {
     .benefits-grid {
         grid-template-columns: 1fr;
         /* Single column minimum height */
-        min-height: 400px;
+        min-height: 800px;
+        /* Consistent row heights for small screens */
+        grid-auto-rows: minmax(450px, auto);
     }
     
     .benefit-card {
         /* Consistent card height on small screens */
-        min-height: 400px;
+        min-height: 450px;
+    }
+    
+    .skeleton-card {
+        /* Match benefit card height */
+        min-height: 450px;
     }
     
     .card-image {
@@ -254,6 +276,11 @@ footer a:hover {
         min-height: 180px;
         max-height: 180px;
         height: 180px;
+    }
+    
+    main {
+        /* Larger minimum height for small screens */
+        min-height: calc(100vh - 320px);
     }
 }
 
@@ -272,7 +299,7 @@ footer a:hover {
 
 /* Skeleton loader for better perceived performance */
 .skeleton-card {
-    background: white;
+    background: #f0f0f0;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -280,29 +307,21 @@ footer a:hover {
     position: relative;
 }
 
+/* Remove animation to prevent CLS */
 .skeleton-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.3),
         transparent
     );
-    animation: skeleton-loading 1.5s infinite;
-}
-
-@keyframes skeleton-loading {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 100%;
-    }
+    /* Animation removed to prevent layout shifts */
 }
 
 /* Hide class for filtering */

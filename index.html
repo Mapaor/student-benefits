@@ -115,11 +115,19 @@
             display: block;
         }
         .skeleton-card {
-            background: white;
+            background: #f0f0f0;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             min-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .skeleton-card { min-height: 420px; }
+            main { min-height: calc(100vh - 300px); }
+        }
+        @media (max-width: 480px) {
+            .skeleton-card { min-height: 450px; }
+            main { min-height: calc(100vh - 320px); }
         }
     </style>
     
