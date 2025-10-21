@@ -292,6 +292,13 @@
     "imageSrc": "/assets/benefits/tryhackme.webp",
     "tags": ["Programming"],
     "url": "https://tryhackme.com/why-subscribe"
+  },
+  {
+    "title": "Perplexity",
+    "description": "Free Pro plan. Unlimited media and file uploads. Free use of GTP-5 and Claude Sonnet 4.",
+    "imageSrc": "https://1000logos.net/wp-content/uploads/2024/08/Perplexity-Logo.png",
+    "tags": ["AI", "Productivity"],
+    "url": "https://www.perplexity.ai/onboarding?login-source=studentLandingPage"
   }
 ]
 
