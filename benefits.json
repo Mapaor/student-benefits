@@ -1,5 +1,12 @@
 [
   {
+    "title": "Kilobat Pro for Students",
+    "description": "Mac network diagnostics and bandwidth controls. Eligible students aged 13 or older in a qualifying degree-granting course can request one year of Pro free on two Macs using a school email; request another year while enrolled. No payment or Kilobat account required.",
+    "imageSrc": "/assets/benefits/kilobat.png",
+    "tags": ["Productivity", "Network", "macOS"],
+    "url": "https://kilobat.app/students"
+  },
+  {
     "title": "GitHub Student Developer Pack",
     "description": "Access to GitHub Pro, GitHub Copilot, and over 100 premium developer tools, including cloud credits, free domains, and professional software.",
     "imageSrc": "/assets/benefits/gh-pack.webp",
